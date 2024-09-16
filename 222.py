@@ -128,7 +128,7 @@ class main:
         self.code_ha = 999
         self.code_ho = 4999
         self.check_ha = 0
-        self._check_ho = 1
+        self.check_ho = 1
         
         while True:
             system('cls')
@@ -255,7 +255,7 @@ class main:
         self.hoghoghi_save.append(i)
         print("Added successfully!")
 
-        with open("D:\\python\\oinal\\d.txt", "a") as file:
+        with open("d.txt", "a") as file:
             file.write(f"\n{self._check_ho},{self.code_ha},{i.Name},{i.code_city},{i.phone_number},{i.home_adress},{i.Email},{ho.fax_number}\n")
     
     def add_haghighi(self):
@@ -300,11 +300,11 @@ class main:
         self.haghighi_save.append(i)
         print("Contact added successfully!")
 
-        with open("D:\\python\\oinal\\d.txt", "a") as file:  
+        with open("d.txt", "a") as file:  
             file.write(f"{self.check_ha},{self.code_ha},{i.Name},{i.code_city},{i.phone_number},{i.home_adress},{i.Email},{ha.family_members},{ha.real_name}\n")
 
     def display_hoghoghi(self):
-        with open("D:\\python\\oinal\\d.txt", "r") as f:
+        with open("d.txt", "r") as f:
             system('cls')
             display = f.readlines()
             print(f"{'ID':<6}{'Name':<20}{'Phone Number':<15}{'Home Address':<20}{'Email':<25}{"fax number":<8}")
@@ -317,7 +317,7 @@ class main:
             input(f"Press any key to continue{'.'*11}")
 
     def display_haghighi(self):
-        with open("D:\\python\\oinal\\d.txt", "r") as f:
+        with open("d.txt", "r") as f:
             system('cls')
             display = f.readlines()
             print(f"{'ID':<6}{'Name':<20}{'Phone Number':<15}{'Home Address':<20}{'Email':<25}{'Family Members':<15}{'Real Name':<20}")
@@ -332,7 +332,7 @@ class main:
         print("Contact added successfully and saved to d.txt!")
 
     def search_contact_by_id_haghighi(self, search_id = 1000):
-        with open("D:\\python\\oinal\\d.txt", "r") as f:
+        with open("d.txt", "r") as f:
             display = f.readlines()
             for j in display:
                 temp = j.split(',')
@@ -342,7 +342,7 @@ class main:
                     print(f"{temp[0]:<6}{temp[1]:<20}{temp[3]:<15}{temp[4]:<20}{temp[5]:<25}{temp[6]:<15}{temp[7]:<20}")
         input("enter any buttons to continue")
     def search_contact_by_id_hoghoghi(self, search_id = 5000):
-        with open("D:\\python\\oinal\\d.txt", "r") as f:
+        with open("d.txt", "r") as f:
             display = f.readlines()
             for j in display:
                 temp = j.split(',')
@@ -352,7 +352,7 @@ class main:
                     print(f"{temp[0]:<6}{temp[1]:<20}{temp[3]:<15}{temp[4]:<20}{temp[5]:<25}{temp[6]:<18}")
         input("enter any buttons to continue")
     def edit_search_by_id_haghighi(self, edit_id):
-        with open("D:\\python\\oinal\\d.txt", "r") as f:
+        with open("d.txt", "r") as f:
             display = f.readlines()
 
         for i,display in enumerate (display):
@@ -382,10 +382,10 @@ class main:
                 result = input("Enter new real name: ")
                 temp[8] = result
                 display[i] = ','.join(temp)+'\n'
-            with open("D:\\python\\oinal\\d.txt", "w") as f:
+            with open("d.txt", "w") as f:
                     f.writelines(display)
     def edit_search_by_id_hoghoghi(self, edit_id):
-        with open("D:\\python\\oinal\\d.txt", "r") as f:
+        with open("d.txt", "r") as f:
             display = f.readlines()
 
         for i,display in enumerate (display):
@@ -412,13 +412,13 @@ class main:
                 result = input("Enter new fax number: ")
                 temp[6] = result
                 display[i] = ','.join(temp)+'\n'
-            with open("D:\\python\\oinal\\d.txt", "w") as f:
+            with open("d.txt", "w") as f:
                     f.writelines(display)
     def delete_all(self):
-        with open("D:\\python\\oinal\\d.txt", "w") as f:
+        with open("d.txt", "w") as f:
             pass
     def delete_ID(self,deleteId):
-        with open("D:\\python\\oinal\\d.txt", "r") as f:
+        with open("d.txt", "r") as f:
             lines = f.readlines()
 
         updated_lines = []
@@ -432,7 +432,7 @@ class main:
                 updated_lines.append(line)
 
         
-        with open("D:\\python\\oinal\\d.txt", "w") as f:
+        with open("d.txt", "w") as f:
             f.writelines(updated_lines)
 
         print("Contact deleted successfully!")
